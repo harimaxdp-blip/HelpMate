@@ -1,0 +1,296 @@
+import "./LandingPage.css"
+
+import Navbar from "../components/Navbar"
+import googleImg from "../assets/users.png"
+import { FaPlayCircle } from "react-icons/fa"
+
+import handshakeVideo from "../assets/handshake.mp4"
+
+/* STATS IMAGES */
+import cubeImg from "../assets/cube.png"
+import usersImg from "../assets/users.png"
+import chartImg from "../assets/chart.png"
+import supportImg from "../assets/support.png"
+
+/* FEATURE IMAGES */
+import rocketImg from "../assets/rocket.png"
+import shieldImg from "../assets/shield.png"
+import tagImg from "../assets/tag.png"
+import updateImg from "../assets/update.png"
+import headphoneImg from "../assets/headphone.png"
+
+function LandingPage() {
+
+  return (
+
+    <div className="landing-page">
+
+      {/* NAVBAR */}
+      <Navbar />
+
+      {/* HERO */}
+
+      <section className="hero-section">
+
+        {/* LEFT */}
+
+        <div className="hero-left">
+
+          <div className="mini-badge">
+            ⚡ Smart Apps. Real Solutions.
+          </div>
+
+          <h1>
+            We build & sell
+            <br />
+            powerful <span>eApps</span>
+            <br />
+            for your business
+          </h1>
+
+          <p>
+            Ready-to-use web applications built with modern
+            tech to help you save time, reduce costs,
+            and grow faster.
+          </p>
+
+          {/* BUTTONS */}
+
+          <div className="hero-buttons">
+
+            <button className="hero-explore-btn">
+              Explore eApps →
+            </button>
+
+            <button className="hero-work-btn">
+
+              <FaPlayCircle />
+
+              How It Works
+
+            </button>
+<div className="mobile-customers">
+
+  <div className="mobile-shield">
+    🛡️
+  </div>
+
+  <div className="mobile-customers-content">
+
+    <p>Trusted by businesses worldwide</p>
+
+    <div className="mobile-users">
+
+      <img src="/u1.jpg" alt="" />
+      <img src="/u2.jpg" alt="" />
+      <img src="/u3.jpg" alt="" />
+      <img src="/u4.jpg" alt="" />
+
+      <span>100+ Happy Customers</span>
+
+    </div>
+
+  </div>
+
+</div>
+          </div>
+
+        </div>
+
+        {/* RIGHT */}
+
+        <div className="hero-right">
+
+          <video
+            src={handshakeVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
+
+        </div>
+
+      </section>
+
+      {/* STATS */}
+
+      <section className="stats-section">
+
+        <div className="stat-box">
+
+          <img src={cubeImg} alt="" className="stat-img" />
+
+          <div className="stat-text">
+
+            <h2>50+</h2>
+
+            <p>Premium eApps</p>
+
+          </div>
+
+        </div>
+
+        <div className="stat-box">
+
+          <img src={usersImg} alt="" className="stat-img" />
+
+          <div className="stat-text">
+
+            <h2>100+</h2>
+
+            <p>Happy Customers</p>
+
+          </div>
+
+        </div>
+
+        <div className="stat-box">
+
+          <img src={chartImg} alt="" className="stat-img" />
+
+          <div className="stat-text">
+
+            <h2>98%</h2>
+
+            <p>Satisfaction Rate</p>
+
+          </div>
+
+        </div>
+
+        <div className="stat-box">
+
+          <img src={supportImg} alt="" className="stat-img" />
+
+          <div className="stat-text">
+
+            <h2>24/7</h2>
+
+            <p>Support</p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* WHY SECTION */}
+
+      <section className="why-section">
+
+        <h2>
+          Why Choose <span>Help Mate?</span>
+        </h2>
+
+        <div className="features-grid">
+
+          {/* CARD */}
+
+          <div className="feature-card">
+
+            <img src={rocketImg} alt="" className="feature-img" />
+
+            <h3 className="feature-title">
+              Ready to Launch
+            </h3>
+
+            <p className="feature-desc">
+              Pre-built, tested & ready to use applications.
+            </p>
+
+          </div>
+
+          {/* CARD */}
+
+          <div className="feature-card">
+
+            <img src={shieldImg} alt="" className="feature-img" />
+
+            <h3 className="feature-title">
+              Modern & Secure
+            </h3>
+
+            <p className="feature-desc">
+              Built with latest tech and security standards.
+            </p>
+
+          </div>
+
+          {/* CARD */}
+
+          <div className="feature-card">
+
+            <img src={tagImg} alt="" className="feature-img" />
+
+            <h3 className="feature-title">
+              Affordable Pricing
+            </h3>
+
+            <p className="feature-desc">
+              High quality eApps at fair pricing.
+            </p>
+
+          </div>
+
+          {/* CARD */}
+
+          <div className="feature-card">
+
+            <img src={updateImg} alt="" className="feature-img" />
+
+            <h3 className="feature-title">
+              Free Updates
+            </h3>
+
+            <p className="feature-desc">
+              Regular updates & improvements.
+            </p>
+
+          </div>
+
+          {/* CARD */}
+
+          <div className="feature-card">
+
+            <img src={headphoneImg} alt="" className="feature-img" />
+
+            <h3 className="feature-title">
+              24/7 Support
+            </h3>
+
+            <p className="feature-desc">
+              Our support team is always here for you.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+<section className="trusted-section">
+
+  <p>Trusted by businesses worldwide</p>
+
+  <div className="brand-row">
+
+    <img src="/google.png" alt="" />
+    <img src="/microsoft.png" alt="" />
+    <img src="/airbnb.png" alt="" />
+    <img src="/shopify.png" alt="" />
+    <img src="/stripe.png" alt="" />
+    <img src="/dropbox.png" alt="" />
+    <img src="/notion.png" alt="" />
+    <img src="/slack.png" alt="" />
+
+  </div>
+
+</section>
+
+    </div>
+
+  )
+}
+
+export default LandingPage
