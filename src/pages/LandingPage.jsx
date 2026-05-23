@@ -1,5 +1,17 @@
 import "./LandingPage.css"
+import u1 from "../assets/u1.jpg";
+import u2 from "../assets/u2.jpg";
+import u3 from "../assets/u3.jpg";
+import u4 from "../assets/u4.jpg";
 
+import googleLogo from "../assets/google.png";
+import microsoftLogo from "../assets/microsoft.png";
+import airbnbLogo from "../assets/airbnb.png";
+import shopifyLogo from "../assets/shopify.png";
+import stripeLogo from "../assets/stripe.png";
+import dropboxLogo from "../assets/dropbox.png";
+import notionLogo from "../assets/notion.png";
+import slackLogo from "../assets/slack.png";
 
 import Navbar from "../components/Navbar"
 import googleImg from "../assets/users.png"
@@ -83,16 +95,16 @@ function LandingPage() {
 
     <p>Trusted by businesses worldwide</p>
 
-    <div className="mobile-users">
+<div className="mobile-users">
 
-      <img src="/u1.jpg" alt="" />
-      <img src="/u2.jpg" alt="" />
-      <img src="/u3.jpg" alt="" />
-      <img src="/u4.jpg" alt="" />
+  <img src={u1} alt="" />
+  <img src={u2} alt="" />
+  <img src={u3} alt="" />
+  <img src={u4} alt="" />
 
-      <span>100+ Happy Customers</span>
+  <span>100+ Happy Customers</span>
 
-    </div>
+</div>
 
   </div>
 
@@ -277,18 +289,18 @@ function LandingPage() {
 
   <p>Trusted by businesses worldwide</p>
 
-  <div className="brand-row">
+<div className="brand-row">
 
-    <img src="/google.png" alt="" />
-    <img src="/microsoft.png" alt="" />
-    <img src="/airbnb.png" alt="" />
-    <img src="/shopify.png" alt="" />
-    <img src="/stripe.png" alt="" />
-    <img src="/dropbox.png" alt="" />
-    <img src="/notion.png" alt="" />
-    <img src="/slack.png" alt="" />
+  <img src={googleLogo} alt="" />
+  <img src={microsoftLogo} alt="" />
+  <img src={airbnbLogo} alt="" />
+  <img src={shopifyLogo} alt="" />
+  <img src={stripeLogo} alt="" />
+  <img src={dropboxLogo} alt="" />
+  <img src={notionLogo} alt="" />
+  <img src={slackLogo} alt="" />
 
-  </div>
+</div>
 
 </section>
 
