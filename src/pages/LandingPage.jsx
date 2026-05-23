@@ -1,5 +1,6 @@
 import "./LandingPage.css"
 
+
 import Navbar from "../components/Navbar"
 import googleImg from "../assets/users.png"
 import { FaPlayCircle } from "react-icons/fa"
@@ -71,10 +72,13 @@ function LandingPage() {
             </button>
 <div className="mobile-customers">
 
-  <div className="mobile-shield">
-    🛡️
-  </div>
-
+<div className="mobile-shield">
+  <img 
+    src="/shield.png" 
+    alt="Shield Icon" 
+    className="shield-img"
+  />
+</div>
   <div className="mobile-customers-content">
 
     <p>Trusted by businesses worldwide</p>

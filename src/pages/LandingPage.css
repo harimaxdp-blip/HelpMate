@@ -4,16 +4,20 @@
   box-sizing:border-box;
 }
 
-body{
-  background:#000;
-  font-family:Arial,Helvetica,sans-serif;
-  overflow-x:hidden;
+body {
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  display: flex;              /* ← add */
+  justify-content: center;   /* ← add */
 }
 
-.landing-page{
-  width:100%;
-  background:#000;
-  padding:10px 20px 40px;
+.landing-page {
+  width: 100%;
+  max-width: 1400px;   /* ← add this */
+  margin: 0 auto;       /* ← add this */
+  background: #000;
+  padding: 10px 20px 40px;
 }
 
 /* ================= HERO ================= */
@@ -43,7 +47,7 @@ body{
 
 .hero-left h1{
   color:white;
-  font-size:42px;
+  font-size:52px;
   line-height:1.08;
   font-weight:700;
   letter-spacing:-1.5px;
@@ -170,20 +174,20 @@ body{
 }
 
 .stat-img{
-  width:30px;
-  height:30px;
+  width:90px;
+  height:90px;
   object-fit:contain;
   mix-blend-mode:screen;
 }
 
 .stat-text h2{
   color:white;
-  font-size:20px;
+  font-size:30px;
 }
 
 .stat-text p{
   color:#7f8798;
-  font-size:11px;
+  font-size:15px;
   margin-top:3px;
 }
 
@@ -218,34 +222,37 @@ body{
   background:#050b16;
   border:1px solid #171d2c;
   border-radius:16px;
-  padding:16px;
-  min-height:105px;
+  padding:22px;
+  min-height:120px;
   transition:0.35s;
+
+  text-align:center;
 }
 
 .feature-card:hover{
-  transform:translateY(-5px) scale(1.02);
+  transform:translateY(-5px);
   border-color:#214d70;
   background:#081120;
 }
 
 .feature-img{
-  width:28px;
-  height:28px;
+  width:80px;
+  height:80px;
   object-fit:contain;
-  margin-bottom:10px;
-  mix-blend-mode:screen;
+
+  display:block;
+  margin:0 auto 16px auto;
 }
 
 .feature-title{
-  color:white;
-  font-size:13px;
-  margin-bottom:6px;
+  color:#fff;
+  font-size:18px;
+  margin-bottom:8px;
 }
 
 .feature-desc{
   color:#7f8798;
-  font-size:11px;
+  font-size:14px;
   line-height:1.5;
 }
 
@@ -528,4 +535,31 @@ body{
     font-size:12px;
     margin-left:8px;
   }
+}
+
+.mobile-shield {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shield-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.stat-box:nth-child(1) .stat-text h2 {
+  color: #66ff00; /* cube green */
+}
+
+.stat-box:nth-child(2) .stat-text h2 {
+  color: #00bfff; /* users blue */
+}
+
+.stat-box:nth-child(3) .stat-text h2 {
+  color: #b266ff; /* chart purple */
+}
+
+.stat-box:nth-child(4) .stat-text h2 {
+  color: #ffd000; /* support yellow */
 }
