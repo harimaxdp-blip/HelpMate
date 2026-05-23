@@ -459,13 +459,15 @@ body {
     margin-top:0;
   }
 
-  .hero-right video{
-    width:110%;
-    max-width:none;
+.hero-right video{
+    width:92%;
+    max-width:420px;
+    height:auto;
     object-fit:contain;
     transform:none;
-  }
-
+    margin:0 auto;
+    display:block;
+}
   .hero-left{
     order:2;
     width:100%;
