@@ -289,16 +289,31 @@ function LandingPage() {
 
   <p>Trusted by businesses worldwide</p>
 
-<div className="brand-row">
+<div className="brand-slider">
 
-  <img src={googleLogo} alt="" />
-  <img src={microsoftLogo} alt="" />
-  <img src={airbnbLogo} alt="" />
-  <img src={shopifyLogo} alt="" />
-  <img src={stripeLogo} alt="" />
-  <img src={dropboxLogo} alt="" />
-  <img src={notionLogo} alt="" />
-  <img src={slackLogo} alt="" />
+  <div className="brand-row">
+
+    <img src={googleLogo} alt="" />
+    <img src={microsoftLogo} alt="" />
+    <img src={airbnbLogo} alt="" />
+    <img src={shopifyLogo} alt="" />
+    <img src={stripeLogo} alt="" />
+    <img src={dropboxLogo} alt="" />
+    <img src={notionLogo} alt="" />
+    <img src={slackLogo} alt="" />
+
+    {/* duplicate for smooth loop */}
+
+    <img src={googleLogo} alt="" />
+    <img src={microsoftLogo} alt="" />
+    <img src={airbnbLogo} alt="" />
+    <img src={shopifyLogo} alt="" />
+    <img src={stripeLogo} alt="" />
+    <img src={dropboxLogo} alt="" />
+    <img src={notionLogo} alt="" />
+    <img src={slackLogo} alt="" />
+
+  </div>
 
 </div>
 
