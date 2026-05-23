@@ -1,40 +1,39 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 .navbar{
   width:100%;
-  height:68px;
-
+  height:64px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-
-  padding:0 40px;
-
+  padding:0 20px;
   background:transparent;
 }
 
 /* LOGO */
 
 .logo-img{
-  height:40px;
+  height:36px;
   width:auto;
-
   object-fit:contain;
 }
+
 /* LINKS */
 
 .nav-links{
   display:flex;
-  gap:34px;
+  gap:28px;
 }
 
 .nav-links a{
   color:#b8c0ce;
-
   text-decoration:none;
-
-  font-size:16px;
-
+  font-size:13px;
   position:relative;
-
   transition:0.3s;
 }
 
@@ -48,17 +47,12 @@
 
 .nav-links .active::after{
   content:"";
-
   position:absolute;
-
   left:0;
-  bottom:-10px;
-
+  bottom:-8px;
   width:100%;
   height:2px;
-
   border-radius:10px;
-
   background:linear-gradient(to right,#47ff75,#1d8dff);
 }
 
@@ -67,119 +61,95 @@
 .nav-buttons{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:10px;
 }
 
 .search-btn{
-  width:50px;
-  height:50px;
-
+  width:38px;
+  height:38px;
   border:none;
-
-  border-radius:16px;
-
+  border-radius:12px;
   background:#09101d;
-
   color:white;
-
-  font-size:15px;
-
+  font-size:14px;
   cursor:pointer;
+  transition:0.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.search-btn:hover{
+  transform:translateY(-2px);
 }
 
 .explore-btn{
   border:none;
-
-  padding:16px 28px;
-
-  border-radius:16px;
-
+  padding:10px 20px;
+  border-radius:12px;
   background:linear-gradient(to right,#47ff75,#1d8dff);
-
   color:white;
-
-  font-size:15px;
+  font-size:13px;
   font-weight:600;
-
   cursor:pointer;
+  transition:0.3s;
+}
+
+.explore-btn:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 0 20px rgba(0,255,170,0.3);
 }
 
 .contact-btn{
-  padding:15px 24px;
-
-  border-radius:16px;
-
+  padding:10px 16px;
+  border-radius:12px;
   border:1px solid #202838;
-
   background:transparent;
-
   color:white;
-
-  font-size:14px;
-
+  font-size:12px;
   cursor:pointer;
+  transition:0.3s;
 }
 
-@media(max-width:1200px){
+.contact-btn:hover{
+  transform:translateY(-2px);
+  border-color:#2fd8ff;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:1100px){
 
   .nav-links{
     display:none;
   }
 }
 
-@media(max-width:700px){
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
 
   .navbar{
-    padding:0 16px;
-    height:76px;
+    height:64px;
+    padding:0;
+    justify-content:center;
   }
 
-
-
-  .explore-btn,
-  .contact-btn{
+  .nav-links,
+  .search-btn,
+  .contact-btn,
+  .explore-btn{
     display:none;
   }
-}
-.navbar{
-  width:100%;
-  height:74px;
 
-  padding:0 24px;
+  .logo{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
 
-}
-
-/* LOGO */
-
-
-
-/* LINKS */
-
-.nav-links{
-  gap:28px;
-}
-
-.nav-links a{
-  font-size:14px;
-}
-
-/* BUTTONS */
-
-.search-btn{
-  width:44px;
-  height:44px;
-
-  border-radius:14px;
-}
-
-.explore-btn{
-  padding:14px 22px;
-
-  font-size:14px;
-}
-
-.contact-btn{
-  padding:13px 18px;
-
-  font-size:13px;
+  .logo-img{
+    height:52px;
+  }
 }
