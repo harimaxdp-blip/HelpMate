@@ -8,14 +8,14 @@ body {
   background: #000;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-  display: flex;
-  justify-content: center;
+  display: flex;              /* ← add */
+  justify-content: center;   /* ← add */
 }
 
 .landing-page {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 1400px;   /* ← add this */
+  margin: 0 auto;       /* ← add this */
   background: #000;
   padding: 10px 20px 40px;
 }
@@ -191,22 +191,6 @@ body {
   margin-top:3px;
 }
 
-.stat-box:nth-child(1) .stat-text h2{
-  color:#66ff00;
-}
-
-.stat-box:nth-child(2) .stat-text h2{
-  color:#00bfff;
-}
-
-.stat-box:nth-child(3) .stat-text h2{
-  color:#b266ff;
-}
-
-.stat-box:nth-child(4) .stat-text h2{
-  color:#ffd000;
-}
-
 /* ================= WHY SECTION ================= */
 
 .why-section{
@@ -241,6 +225,7 @@ body {
   padding:22px;
   min-height:120px;
   transition:0.35s;
+
   text-align:center;
 }
 
@@ -254,6 +239,7 @@ body {
   width:80px;
   height:80px;
   object-fit:contain;
+
   display:block;
   margin:0 auto 16px auto;
 }
@@ -283,46 +269,19 @@ body {
   margin-bottom:16px;
 }
 
-/* ================= BRAND MARQUEE ================= */
-
-.brand-slider{
-  width:100%;
-  overflow:hidden;
-  -webkit-mask-image:linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  mask-image:linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-}
-
 .brand-row{
   display:flex;
-  flex-wrap:nowrap;
-  width:max-content;
+  justify-content:center;
   align-items:center;
-  gap:0;
-  animation:marquee 28s linear infinite;
-}
-
-.brand-row:hover{
-  animation-play-state:paused;
+  flex-wrap:wrap;
+  gap:40px;
 }
 
 .brand-row img{
   height:20px;
   opacity:0.5;
+  transition:0.3s;
   filter:grayscale(100%);
-  margin:0 32px;
-  transition:opacity 0.3s, filter 0.3s, transform 0.3s;
 }
 
 .brand-row img:hover{
@@ -331,37 +290,10 @@ body {
   filter:none;
 }
 
-@keyframes marquee{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-50%); }
-}
-
-@media(prefers-reduced-motion:reduce){
-  .brand-row{
-    animation:none;
-    flex-wrap:wrap;
-    width:auto;
-    justify-content:center;
-    gap:32px;
-  }
-}
-
 /* ================= MOBILE CUSTOMERS ================= */
 
 .mobile-customers{
   display:none;
-}
-
-.mobile-shield{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.shield-img{
-  width:60px;
-  height:60px;
-  object-fit:contain;
 }
 
 /* ================= RESPONSIVE — TABLET ================= */
@@ -542,46 +474,18 @@ body {
     color:#8d95a5;
   }
 
-  /* MARQUEE ON MOBILE */
-
-  .brand-slider{
-    -webkit-mask-image:linear-gradient(
-      to right,
-      transparent 0%,
-      black 8%,
-      black 92%,
-      transparent 100%
-    );
-    mask-image:linear-gradient(
-      to right,
-      transparent 0%,
-      black 8%,
-      black 92%,
-      transparent 100%
-    );
-  }
-
   .brand-row{
     display:flex;
-    flex-wrap:nowrap;
-    width:max-content;
-    justify-content:flex-start;
-    gap:0;
-    animation:marquee 22s linear infinite;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
   }
 
   .brand-row img{
-    height:16px;
-    opacity:0.55;
-    filter:grayscale(100%);
-    margin:0 20px;
-    transition:none;
-  }
-
-  .brand-row img:hover{
-    transform:none;
-    opacity:0.55;
-    filter:grayscale(100%);
+    height:18px;
+    opacity:0.85;
+    filter:none;
   }
 
   /* MOBILE CUSTOMERS */
@@ -632,3 +536,32 @@ body {
     margin-left:8px;
   }
 }
+
+.mobile-shield {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shield-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.stat-box:nth-child(1) .stat-text h2 {
+  color: #66ff00; /* cube green */
+}
+
+.stat-box:nth-child(2) .stat-text h2 {
+  color: #00bfff; /* users blue */
+}
+
+.stat-box:nth-child(3) .stat-text h2 {
+  color: #b266ff; /* chart purple */
+}
+
+.stat-box:nth-child(4) .stat-text h2 {
+  color: #ffd000; /* support yellow */
+}
+
+
