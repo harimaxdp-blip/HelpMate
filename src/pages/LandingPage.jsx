@@ -74,7 +74,7 @@ function LandingPage() {
 
 <div className="mobile-shield">
   <img 
-    src="/shield.png" 
+    src={shieldImg} 
     alt="Shield Icon" 
     className="shield-img"
   />
