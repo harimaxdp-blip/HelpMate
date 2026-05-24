@@ -1,0 +1,500 @@
+/* LoadingPage.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Do NOT disable scroll globally */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background: #000;
+}
+
+/* Loading Screen Only */
+
+.loading-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: radial-gradient(circle at center, #03111f 0%, #000 70%);
+
+  z-index: 9999;
+}
+
+/* Background Glow */
+
+.loading-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: min(60vw, 500px);
+  height: min(60vw, 500px);
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 191, 255, 0.08),
+    transparent 70%
+  );
+
+  animation: glowMove 4s ease-in-out infinite alternate;
+}
+
+/* Main Wrapper */
+
+.loader-wrapper {
+  position: relative;
+
+  width: min(42vw, 220px);
+  height: min(42vw, 220px);
+
+  min-width: 140px;
+  min-height: 140px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Outer Ring */
+
+.loader-ring {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+
+  border-top: 4px solid #3cff73;
+  border-right: 4px solid #00bfff;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+
+  animation: rotate 1.2s linear infinite;
+
+  filter: drop-shadow(0 0 12px #00bfff);
+}
+
+/* Inner Ring */
+
+.loader-ring::before {
+  content: "";
+
+  position: absolute;
+  inset: 14px;
+
+  border-radius: 50%;
+
+  border-bottom: 3px solid #3cff73;
+  border-left: 3px solid #00bfff;
+  border-top: 3px solid transparent;
+  border-right: 3px solid transparent;
+
+  animation: rotateReverse 1.8s linear infinite;
+
+  opacity: 0.8;
+}
+
+/* Logo */
+
+.logo {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-size: clamp(38px, 8vw, 74px);
+  font-weight: 700;
+}
+
+/* Colors */
+
+.green {
+  color: #3cff73;
+  text-shadow: 0 0 15px #3cff73;
+}
+
+.slash {
+  color: #7df9ff;
+  text-shadow: 0 0 15px #7df9ff;
+}
+
+.blue {
+  color: #00bfff;
+  text-shadow: 0 0 15px #00bfff;
+}
+
+/* Particles */
+
+.particles::before,
+.particles::after {
+  content: "";
+
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+/* Top Particle */
+
+.particles::before {
+  top: 10%;
+  right: 12%;
+
+  background: #00bfff;
+
+  box-shadow: 0 0 20px #00bfff;
+
+  animation: pulse 1.5s infinite;
+}
+
+/* Bottom Particle */
+
+.particles::after {
+  bottom: 10%;
+  left: 10%;
+
+  background: #3cff73;
+
+  box-shadow: 0 0 20px #3cff73;
+
+  animation: pulse 1.5s infinite 0.5s;
+}
+
+/* Animations */
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.8);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glowMove {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+  .loader-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .loader-ring {
+    border-width: 3px;
+  }
+
+  .loader-ring::before {
+    inset: 12px;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .logo {
+    font-size: 52px;
+  }
+}
+
+/* Animation Only */
+
+.stat-box {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.stat-box:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stat-box:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.stat-box:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.stat-box:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+/* Hover Animation */
+
+.stat-box:hover {
+  transform: translateY(-10px) scale(1.03);
+  transition: 0.4s ease;
+}
+
+/* Floating Image */
+
+.stat-img {
+  animation: float 3s ease-in-out infinite;
+  transition: 0.4s ease;
+}
+
+.stat-box:hover .stat-img {
+  transform: rotate(8deg) scale(1.08);
+}
+
+/* Why Section Animation */
+
+.why-section {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Keyframes */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* FEATURE CARDS ANIMATION */
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(80px) scale(0.9);
+
+  animation: cardReveal 1s ease forwards;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* Different Delays */
+
+.feature-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+.feature-card:nth-child(5) {
+  animation-delay: 0.7s;
+}
+
+/* Hover Animation */
+
+.feature-card:hover {
+  transform: translateY(-18px) scale(1.04);
+
+  box-shadow:
+    0 0 20px rgba(0, 191, 255, 0.18),
+    0 0 45px rgba(60, 255, 115, 0.12);
+
+  border-color: rgba(0, 191, 255, 0.4);
+}
+
+/* Glow Sweep Effect */
+
+.feature-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120%;
+  left: -40%;
+
+  width: 80px;
+  height: 250%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: rotate(25deg);
+
+  transition: 0.8s;
+}
+
+.feature-card:hover::before {
+  left: 130%;
+}
+
+/* Floating Icons */
+
+.feature-img {
+  animation: floatIcon 3s ease-in-out infinite;
+
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-img {
+  transform: rotate(12deg) scale(1.15);
+}
+
+/* Title Animation */
+
+.feature-title {
+  transition: 0.4s ease;
+}
+
+.feature-card:hover .feature-title {
+  letter-spacing: 1px;
+
+  text-shadow: 0 0 12px rgba(0, 191, 255, 0.5);
+}
+
+/* Description Fade */
+
+.feature-desc {
+  transition: 0.4s ease;
+}
+
+.feature-card:hover .feature-desc {
+  opacity: 0.85;
+}
+
+/* Section Title Animation */
+
+.why-section h2 {
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 5px rgba(0, 191, 255, 0.2);
+  }
+
+  to {
+    text-shadow:
+      0 0 12px rgba(0, 191, 255, 0.6),
+      0 0 25px rgba(60, 255, 115, 0.25);
+  }
+}

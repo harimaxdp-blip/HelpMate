@@ -200,7 +200,7 @@ body{
 /* ================= WHY SECTION ================= */
 
 .why-section{
-  padding-top:16px;
+  padding-top:14px;
 }
 
 .why-section h2{
@@ -428,6 +428,7 @@ body{
 
 .hero-right video{
   width:100% !important;
+  padding-top:10px !important;
   height:260px !important;          /* ← increase height */
   max-width:100vw !important;
   object-fit:contain;               /* ← change cover to contain — shows full video */
@@ -635,4 +636,31 @@ body{
     font-size:12px;
     margin-left:8px;
   }
+}
+
+
+
+.feature-card{
+  background:#050b16;
+  border:1px solid #171d2c;
+  border-radius:16px;
+  padding:22px;
+  min-height:120px;
+  text-align:center;
+
+  opacity:0;
+  transform:translateY(150px) scale(0.8);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22,1,0.36,1),
+    border-color 0.35s,
+    background 0.35s;
+}
+
+/* SHOW AFTER SCROLL */
+
+.feature-card.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
 }

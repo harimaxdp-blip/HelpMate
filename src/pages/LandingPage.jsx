@@ -65,7 +65,32 @@ function useCountUp(target, duration = 2000, suffix = "+") {
 
 /* ── COMPONENT ── */
 function LandingPage() {
+useEffect(() => {
+  const cards = document.querySelectorAll(".feature-card");
 
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+
+          setTimeout(() => {
+            entry.target.classList.add("show");
+          }, 200);
+
+        }
+      });
+    },
+    {
+      threshold: 0.8,
+    }
+  );
+
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
+
+  return () => observer.disconnect();
+}, []);
   const s1 = useCountUp(50, 2000, "+")
   const s2 = useCountUp(100, 2000, "+")
   const s3 = useCountUp(98, 2000, "%")

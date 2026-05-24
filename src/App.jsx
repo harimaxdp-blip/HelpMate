@@ -1,7 +1,19 @@
-import LandingPage from "./pages/LandingPage"
+import { useEffect, useState } from "react";
+import LandingPage from "./pages/LandingPage";
+import LoadingPage from "./pages/LoadingPage";
 
 function App() {
-  return <LandingPage />
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return loading ? <LoadingPage /> : <LandingPage />;
 }
 
-export default App
+export default App;
