@@ -1,8 +1,14 @@
-import "./Navbar.css"
+// Navbar.jsx
 
-import { FaSearch } from "react-icons/fa"
+import "./Navbar.css";
+
+import { FaSearch } from "react-icons/fa";
+
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+
+  const location = useLocation();
 
   return (
 
@@ -12,11 +18,11 @@ function Navbar() {
 
       <div className="logo">
 
-       <img
-  src="/logo.png"
-  alt="Help Mate Logo"
-  className="logo-img"
-/>
+        <img
+          src="/logo.png"
+          alt="Help Mate Logo"
+          className="logo-img"
+        />
 
       </div>
 
@@ -24,29 +30,47 @@ function Navbar() {
 
       <div className="nav-links">
 
-        <a className="active" href="#">
+        <Link
+          className={location.pathname === "/" ? "active" : ""}
+          to="/"
+        >
           Home
-        </a>
+        </Link>
 
-        <a href="#">
+        <Link
+          className={location.pathname === "/services" ? "active" : ""}
+          to="/services"
+        >
           Services
-        </a>
+        </Link>
 
-        <a href="#">
+        <Link
+          className={location.pathname === "/products" ? "active" : ""}
+          to="/products"
+        >
           Products
-        </a>
+        </Link>
 
-        <a href="#">
+        <Link
+          className={location.pathname === "/how-it-works" ? "active" : ""}
+          to="/how-it-works"
+        >
           How It Works
-        </a>
+        </Link>
 
-        <a href="#">
+        <Link
+          className={location.pathname === "/about" ? "active" : ""}
+          to="/about"
+        >
           About Us
-        </a>
+        </Link>
 
-        <a href="#">
+        <Link
+          className={location.pathname === "/contact" ? "active" : ""}
+          to="/contact"
+        >
           Contact
-        </a>
+        </Link>
 
       </div>
 
@@ -70,7 +94,7 @@ function Navbar() {
 
     </nav>
 
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
